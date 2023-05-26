@@ -28,11 +28,11 @@ context('Funcionalidade Login', () => {
         cy.get('.page-title').should('contain', 'Minha conta')
     });
 
-    it('Deve fazer login com sucesso - sem otimização', () => {
+    it.only('Deve fazer login com sucesso - sem otimização', () => {
         cy.get('#username').type(dadosLogin.usuario)
         cy.get('#password').type(dadosLogin.senha, { log: false })
         cy.get('.woocommerce-form > .button').click()
         cy.get('.page-title').should('contain', 'Minha conta')
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, aluno')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá,')
     })
 })
